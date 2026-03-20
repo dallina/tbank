@@ -1,0 +1,18 @@
+print("Введите начало и конец диапазона:")
+start, finish = map(int, input().split())
+if start > finish:
+    print("Ошибка: начало диапазона должно быть меньше конца")
+    start, finish = finish, start
+def f(start, finish):
+    num1, num2 = 0, 1
+    fibonacci_numbers = []
+    while num1 <= finish:
+        if num1 >= start:
+            fibonacci_numbers.append(num1)
+        num1, num2 = num2, num1 + num2
+    return fibonacci_numbers
+numbers = f(start, finish)
+if numbers:
+    print(" ".join(map(str, numbers)))
+else:
+    print("В заданном диапазоне нет чисел Фибоначчи")
