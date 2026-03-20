@@ -42,8 +42,8 @@ def paginate(items, title_text="Список книг"):
         end = start + PAGE_SIZE
         
         for b in items[start:end]:
-            status = "✅ Прочитана" if b['is_read'] else "📖 Не прочитана"
-            fav = "⭐" if b.get('is_favorite') else ""
+            status = " Прочитана" if b['is_read'] else " Не прочитана"
+            fav = "(FAV)" if b.get('is_favorite') else ""
             print(f"ID: {b['id']} | {fav} '{b['title']}' — {b['author']} | {status}")
 
         print(f"\n[В] - Вперед, [Н] - Назад, [М] - В меню")
